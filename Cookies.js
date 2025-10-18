@@ -7,22 +7,9 @@ ScrollSmoother.create({
     effects: true,
 });
 
+// Temporarily disable card animations to test alignment
 ScrollTrigger.matchMedia({
     "(min-width: 991px)": function () {
-        // Animation for cookie cards (no rotation, aligned)
-        gsap.from('.cookie-card', {
-            scrollTrigger: {
-                trigger: '.cookie-grid',
-                start: 'top 85%',
-                toggleActions: 'play none none reverse'
-            },
-            opacity: 0,
-            y: 60,
-            stagger: 0.4,
-            ease: 'power3.out',
-            duration: 1.2
-        });
-
         // Animation for page heading
         gsap.from('.page-heading', {
             scrollTrigger: {

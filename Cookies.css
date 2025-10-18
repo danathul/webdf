@@ -110,9 +110,8 @@ body {
     justify-content: space-between;
     box-shadow: var(--modern-shadow);
     background-image: linear-gradient(135deg, rgba(245, 230, 204, 0.3), transparent);
-    height: 100%; /* Ensure uniform height */
-    margin: 0; /* Remove any stray margins */
-    min-height: 0; /* Prevent overflow issues */
+    min-height: 600px; /* Fixed minimum height to enforce alignment */
+    margin: 0;
 }
 
 .cookie-card:hover {
