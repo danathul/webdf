@@ -127,5 +127,28 @@ gsap.from('.product-img-wrapper .product3', {
     x: 500,
     duration: 1.5
 });
+// Register GSAP ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 
+// Animate the whole Nav bar on load
+gsap.from(".nav", {
+    y: -50,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out"
+});
+// To this:
+gsap.from(".juice-text", {
+    x: -50, // Moves it slightly from the left instead of pushing it right
+    opacity: 0,
+    duration: 1
+});
+// Specifically pop the Login button at the end
+gsap.from(".nav-login-btn", {
+    scale: 0,
+    opacity: 0,
+    duration: 0.8,
+    delay: 0.8,
+    ease: "back.out(1.7)"
+});
 // Removed 3D hover effect event listeners for cookies

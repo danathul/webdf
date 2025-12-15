@@ -427,3 +427,72 @@ header{
     }
 }
 
+/* Navigation Container */
+.nav {
+    display: flex;
+    justify-content: space-between; /* Pushes Logo to left, Links to right */
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 30px; /* Space between links */
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for standard links */
+.nav-links li a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+}
+
+/* THE LOGIN BUTTON - Rightmost item */
+.nav-login-btn {
+    background-color: #8A4B2F; /* Your theme brown */
+    color: #ffffff !important;
+    padding: 10px 25px;
+    border-radius: 50px; /* Matching your 'radius' class */
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: 2px solid #8A4B2F;
+    display: inline-block;
+}
+
+.nav-login-btn:hover {
+    background-color: transparent;
+    color: #8A4B2F !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(138, 75, 47, 0.3);
+}/* Ensure the section stays within the screen bounds */
+#section3 {
+    width: 100%;
+    padding: 80px 10% ; /* Adds breathing room on the sides */
+    display: flex;
+    justify-content: center;
+}
+
+.juice-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Keeps everything from spreading too far on big screens */
+    gap: 50px;
+}
+
+.juice-text {
+    flex: 1; /* Takes up 50% of the space */
+    max-width: 500px; /* Prevents the label/text from going too far right */
+    text-align: left;
+}
+
+.banner {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}

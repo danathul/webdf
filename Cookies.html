@@ -7,7 +7,7 @@
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Outfit:wght@700&amp;display=swap" rel="stylesheet" />
     <!-- css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="Cookies.css" />
@@ -15,104 +15,283 @@
 <body>
 <header class="w-full">
     <nav class="nav">
-        <h1 class="logo"><i class="fas fa-coffee" aria-hidden="true"></i> Dafah</h1>
+        <h1 class="logo"><i class="fas fa-cookie" aria-hidden="true"></i> Dafah</h1>
         <ul class="nav-links">
-            <li><a href="Home_page.html">Home</a></li>
             <li><a href="menu.html">Menu</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="Location.html">Our Location</a></li>
+            <li><a href="giftcard.html">Gift Cards</a></li>
         </ul>
     </nav>
 </header>
 
-<div class="cookie-page">
-    <h1 class="page-heading">Our Cozy Cookie Collection</h1>
-    <p class="page-intro">Dive into a world of handcrafted cookies, baked with love and infused with warmth—each bite a cozy embrace.</p>
+<!-- Animated Background -->
+<div class="animated-bg">
+    <div class="floating-cookie floating-1"></div>
+    <div class="floating-cookie floating-2"></div>
+    <div class="floating-cookie floating-3"></div>
+</div>
 
+<div class="cookie-page">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="page-heading">
+                <span class="heading-word">Our</span>
+                <span class="heading-word">Cozy</span>
+                <span class="heading-word">Cookie</span>
+                <span class="heading-word">Collection</span>
+            </h1>
+            <p class="page-intro">Dive into a world of handcrafted cookies, baked with love and infused with warmth—each bite a cozy embrace.</p>
+            <div class="hero-divider"></div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Cookies</button>
+            <button class="filter-btn" data-filter="chocolate">Chocolate</button>
+            <button class="filter-btn" data-filter="vanilla">Vanilla</button>
+            <button class="filter-btn" data-filter="premium">Premium</button>
+        </div>
+    </section>
+
+    <!-- Cookies Grid -->
     <div class="cookie-grid">
-        <div class="cookie-card">
-            <img src="images/choclatecokies.png" alt="Chocolate Cookies" class="cookie-img">
-            <h3 class="cookie-title">Classic Chocolate</h3>
-            <p class="cookie-desc">Rich, fudgy chocolate that melts into a warm delight.</p>
-            <div class="cookie-price">$2.50</div>
+        <!-- Cookie Card 1 -->
+        <div class="cookie-card" data-category="chocolate">
+            <div class="card-image-wrapper">
+                <img src="images/choclatecokies.png" alt="Classic Chocolate" class="cookie-img">
+                <div class="card-badge">Popular</div>
+            </div>
+            <div class="card-content">
+                <h3 class="cookie-title">Classic Chocolate</h3>
+                <p class="cookie-desc">Rich, fudgy chocolate that melts into a warm delight.</p>
+                <div class="cookie-meta">
+                    <div class="cookie-price">$2.50</div>
+                    <div class="cookie-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
-        <div class="cookie-card">
-            <img src="images/cookie1.png" alt="Vanilla Twist Cookie" class="cookie-img">
-            <h3 class="cookie-title">Vanilla Twist</h3>
-            <p class="cookie-desc">Soft vanilla with a playful swirl of sweetness.</p>
-            <div class="cookie-price">$2.00</div>
+
+        <!-- Cookie Card 2 -->
+        <div class="cookie-card" data-category="vanilla">
+            <div class="card-image-wrapper">
+                <img src="images/cookie1.png" alt="Vanilla Twist Cookie" class="cookie-img">
+                <div class="card-badge">New</div>
+            </div>
+            <div class="card-content">
+                <h3 class="cookie-title">Vanilla Twist</h3>
+                <p class="cookie-desc">Soft vanilla with a playful swirl of sweetness.</p>
+                <div class="cookie-meta">
+                    <div class="cookie-price">$2.00</div>
+                    <div class="cookie-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.6</span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
-        <div class="cookie-card">
-            <img src="images/cookie2.png" alt="Nutty Crunch Cookie" class="cookie-img">
-            <h3 class="cookie-title">Nutty Crunch</h3>
-            <p class="cookie-desc">A satisfying crunch with roasted nuts.</p>
-            <div class="cookie-price">$2.75</div>
+
+        <!-- Cookie Card 3 -->
+        <div class="cookie-card" data-category="premium">
+            <div class="card-image-wrapper">
+                <img src="images/cookie2.png" alt="Nutty Crunch Cookie" class="cookie-img">
+                <div class="card-badge">Premium</div>
+            </div>
+            <div class="card-content">
+                <h3 class="cookie-title">Nutty Crunch</h3>
+                <p class="cookie-desc">A satisfying crunch with roasted nuts.</p>
+                <div class="cookie-meta">
+                    <div class="cookie-price">$2.75</div>
+                    <div class="cookie-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.9</span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
-        <div class="cookie-card">
-            <img src="images/cookie3.png" alt="Berry Burst Cookie" class="cookie-img">
-            <h3 class="cookie-title">Berry Burst</h3>
-            <p class="cookie-desc">Juicy berries bursting with flavor.</p>
-            <div class="cookie-price">$2.50</div>
+
+        <!-- Cookie Card 4 -->
+        <div class="cookie-card" data-category="vanilla">
+            <div class="card-image-wrapper">
+                <img src="images/cookie3.png" alt="Berry Burst Cookie" class="cookie-img">
+            </div>
+            <div class="card-content">
+                <h3 class="cookie-title">Berry Burst</h3>
+                <p class="cookie-desc">Juicy berries bursting with flavor.</p>
+                <div class="cookie-meta">
+                    <div class="cookie-price">$2.50</div>
+                    <div class="cookie-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.7</span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
-        <div class="cookie-card">
-            <img src="images/creamcookies.png" alt="Creamy Dream Cookie" class="cookie-img">
-            <h3 class="cookie-title">Creamy Dream</h3>
-            <p class="cookie-desc">Velvety cream centers for pure bliss.</p>
-            <div class="cookie-price">$3.00</div>
+
+        <!-- Cookie Card 5 -->
+        <div class="cookie-card" data-category="premium">
+            <div class="card-image-wrapper">
+                <img src="images/creamcookies.png" alt="Creamy Dream Cookie" class="cookie-img">
+                <div class="card-badge">Premium</div>
+            </div>
+            <div class="card-content">
+                <h3 class="cookie-title">Creamy Dream</h3>
+                <p class="cookie-desc">Velvety cream centers for pure bliss.</p>
+                <div class="cookie-meta">
+                    <div class="cookie-price">$3.00</div>
+                    <div class="cookie-rating">
+                        <i class="fas fa-star"></i>
+                        <span>5.0</span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
-        <div class="cookie-card">
-            <img src="images/oreocookies.png" alt="Oreo Bliss Cookie" class="cookie-img">
-            <h3 class="cookie-title">Oreo Bliss</h3>
-            <p class="cookie-desc">Oreo chunks for a double cookie thrill.</p>
-            <div class="cookie-price">$2.75</div>
+
+        <!-- Cookie Card 6 -->
+        <div class="cookie-card" data-category="chocolate">
+            <div class="card-image-wrapper">
+                <img src="images/oreocookies.png" alt="Oreo Bliss Cookie" class="cookie-img">
+                <div class="card-badge">Popular</div>
+            </div>
+            <div class="card-content">
+                <h3 class="cookie-title">Oreo Bliss</h3>
+                <p class="cookie-desc">Oreo chunks for a double cookie thrill.</p>
+                <div class="cookie-meta">
+                    <div class="cookie-price">$2.75</div>
+                    <div class="cookie-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.9</span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
-        <div class="cookie-card">
-            <img src="images/pinkcookies.png" alt="Pink Strawberry Cookie" class="cookie-img">
-            <h3 class="cookie-title">Pink Strawberry</h3>
-            <p class="cookie-desc">Sweet strawberry with a soft pink glow.</p>
-            <div class="cookie-price">$2.50</div>
+
+        <!-- Cookie Card 7 -->
+        <div class="cookie-card" data-category="vanilla">
+            <div class="card-image-wrapper">
+                <img src="images/pinkcookies.png" alt="Pink Strawberry Cookie" class="cookie-img">
+            </div>
+            <div class="card-content">
+                <h3 class="cookie-title">Pink Strawberry</h3>
+                <p class="cookie-desc">Sweet strawberry with a soft pink glow.</p>
+                <div class="cookie-meta">
+                    <div class="cookie-price">$2.50</div>
+                    <div class="cookie-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
-        <div class="cookie-card">
-            <img src="images/pumkincookies.png" alt="Pumpkin Spice Cookie" class="cookie-img">
-            <h3 class="cookie-title">Pumpkin Spice</h3>
-            <p class="cookie-desc">Warm spices for a seasonal treat.</p>
-            <div class="cookie-price">$2.75</div>
+
+        <!-- Cookie Card 8 -->
+        <div class="cookie-card" data-category="premium">
+            <div class="card-image-wrapper">
+                <img src="images/pumkincookies.png" alt="Pumpkin Spice Cookie" class="cookie-img">
+                <div class="card-badge">Seasonal</div>
+            </div>
+            <div class="card-content">
+                <h3 class="cookie-title">Pumpkin Spice</h3>
+                <p class="cookie-desc">Warm spices for a seasonal treat.</p>
+                <div class="cookie-meta">
+                    <div class="cookie-price">$2.75</div>
+                    <div class="cookie-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.7</span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
-        <div class="cookie-card">
-            <img src="images/red-velvetcookies.png" alt="Red Velvet Cookie" class="cookie-img">
-            <h3 class="cookie-title">Red Velvet</h3>
-            <p class="cookie-desc">Rich red with a cream cheese hint.</p>
-            <div class="cookie-price">$3.00</div>
+
+        <!-- Cookie Card 9 -->
+        <div class="cookie-card" data-category="chocolate">
+            <div class="card-image-wrapper">
+                <img src="images/red-velvetcookies.png" alt="Red Velvet Cookie" class="cookie-img">
+                <div class="card-badge">Premium</div>
+            </div>
+            <div class="card-content">
+                <h3 class="cookie-title">Red Velvet</h3>
+                <p class="cookie-desc">Rich red with a cream cheese hint.</p>
+                <div class="cookie-meta">
+                    <div class="cookie-price">$3.00</div>
+                    <div class="cookie-rating">
+                        <i class="fas fa-star"></i>
+                        <span>5.0</span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
-        <div class="cookie-card">
-            <img src="images/twixcookies.png" alt="Twix Crunch Cookie" class="cookie-img">
-            <h3 class="cookie-title">Twix Crunch</h3>
-            <p class="cookie-desc">Caramel and biscuit crunch in every bite.</p>
-            <div class="cookie-price">$2.75</div>
+
+        <!-- Cookie Card 10 -->
+        <div class="cookie-card" data-category="chocolate">
+            <div class="card-image-wrapper">
+                <img src="images/twixcookies.png" alt="Twix Crunch Cookie" class="cookie-img">
+            </div>
+            <div class="card-content">
+                <h3 class="cookie-title">Twix Crunch</h3>
+                <p class="cookie-desc">Caramel and biscuit crunch in every bite.</p>
+                <div class="cookie-meta">
+                    <div class="cookie-price">$2.75</div>
+                    <div class="cookie-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
-        <div class="cookie-card">
-            <img src="images/cookie1.png" alt="Vanilla Bean Cookie" class="cookie-img">
-            <h3 class="cookie-title">Vanilla Bean</h3>
-            <p class="cookie-desc">Pure vanilla warmth in every crumb.</p>
-            <div class="cookie-price">$2.00</div>
+
+        <!-- Cookie Card 11 -->
+        <div class="cookie-card" data-category="vanilla">
+            <div class="card-image-wrapper">
+                <img src="images/cookie1.png" alt="Vanilla Bean Cookie" class="cookie-img">
+            </div>
+            <div class="card-content">
+                <h3 class="cookie-title">Vanilla Bean</h3>
+                <p class="cookie-desc">Pure vanilla warmth in every crumb.</p>
+                <div class="cookie-meta">
+                    <div class="cookie-price">$2.00</div>
+                    <div class="cookie-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.6</span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
-        <div class="cookie-card">
-            <img src="images/vanillacochocolatecookies.png" alt="Vanilla Chocolate Swirl Cookie" class="cookie-img">
-            <h3 class="cookie-title">Vanilla Chocolate Swirl</h3>
-            <p class="cookie-desc">A harmonious blend of flavors.</p>
-            <div class="cookie-price">$2.50</div>
+
+        <!-- Cookie Card 12 -->
+        <div class="cookie-card" data-category="chocolate">
+            <div class="card-image-wrapper">
+                <img src="images/vanillacochocolatecookies.png" alt="Vanilla Chocolate Swirl Cookie" class="cookie-img">
+                <div class="card-badge">Popular</div>
+            </div>
+            <div class="card-content">
+                <h3 class="cookie-title">Vanilla Chocolate Swirl</h3>
+                <p class="cookie-desc">A harmonious blend of flavors.</p>
+                <div class="cookie-meta">
+                    <div class="cookie-price">$2.50</div>
+                    <div class="cookie-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.9</span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
     </div>
@@ -130,12 +309,10 @@
     </div>
 </footer>
 
-<!-- gsap -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-<!-- local js -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 <script src="Cookies.js"></script>
 </body>
 </html>

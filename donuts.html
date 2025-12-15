@@ -8,22 +8,21 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Outfit:wght@700&amp;display=swap" rel="stylesheet" />
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    <!-- Your exact styling -->
+    <!-- Styling -->
     <link rel="stylesheet" href="donuts.css" />
 </head>
 <body>
 
-<!-- Header with steam effect -->
+<!-- Header -->
 <header>
     <nav class="nav">
-        <h1 class="logo"><i class="fas fa-coffee" aria-hidden="true"></i> Dafah</h1>
+        <h1 class="logo"><i class="fas fa-ring" aria-hidden="true"></i> Dafah</h1>
         <ul class="nav-links">
-            <li><a href="Home_page.html">Home</a></li>
             <li><a href="menu.html">Menu</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
@@ -32,97 +31,212 @@
     </nav>
 </header>
 
-<main class="cookie-page">
-    <h1 class="page-heading">Our Donut Dreams</h1>
-    <p class="page-intro">Fluffy, warm, glazed perfection — hand-rolled and fried fresh every morning with pure love and joy in every bite.</p>
+<!-- Animated Background -->
+<div class="animated-bg">
+    <div class="donut-float donut-1"></div>
+    <div class="donut-float donut-2"></div>
+    <div class="donut-float donut-3"></div>
+    <div class="sprinkle-burst"></div>
+</div>
 
-    <div class="cookie-grid">
+<!-- Main Content -->
+<main class="donut-page">
+    <!-- Hero Section with Animated Title -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="page-heading">
+                <span class="heading-char">O</span>
+                <span class="heading-char">u</span>
+                <span class="heading-char">r</span>
+                <span class="heading-char space"> </span>
+                <span class="heading-char">D</span>
+                <span class="heading-char">o</span>
+                <span class="heading-char">n</span>
+                <span class="heading-char">u</span>
+                <span class="heading-char">t</span>
+                <span class="heading-char space"> </span>
+                <span class="heading-char">D</span>
+                <span class="heading-char">r</span>
+                <span class="heading-char">e</span>
+                <span class="heading-char">a</span>
+                <span class="heading-char">m</span>
+                <span class="heading-char">s</span>
+            </h1>
+            <p class="page-intro">Fluffy, warm, glazed perfection — hand-rolled and fried fresh every morning with pure love and joy in every bite.</p>
+            <div class="hero-divider"></div>
+        </div>
+    </section>
 
-        <div class="cookie-card">
-            <img src="images/yellow-dount.png" alt="Lemon Glaze Donut" class="cookie-img">
-            <h3 class="cookie-title">Lemon Glaze</h3>
-            <p class="cookie-desc">Zesty lemon icing dripping over cloud-soft dough.</p>
-            <div class="cookie-price">$2.90</div>
+    <!-- Interactive Donut Selector -->
+    <section class="selector-section">
+        <div class="selector-container">
+            <button class="selector-btn active" data-flavor="all">
+                <i class="fas fa-star"></i> All Flavors
+            </button>
+            <button class="selector-btn" data-flavor="glazed">
+                <i class="fas fa-droplet"></i> Glazed
+            </button>
+            <button class="selector-btn" data-flavor="sprinkled">
+                <i class="fas fa-sparkles"></i> Sprinkled
+            </button>
+            <button class="selector-btn" data-flavor="premium">
+                <i class="fas fa-crown"></i> Premium
+            </button>
+        </div>
+    </section>
+
+    <!-- Donuts Grid with Creative Layout -->
+    <div class="donut-grid">
+        <!-- Donut Card 1 -->
+        <div class="donut-card" data-flavor="glazed">
+            <div class="card-wrapper">
+                <div class="donut-showcase">
+                    <img src="images/yellow-dount.png" alt="Lemon Glaze Donut" class="donut-img">
+                    <div class="shine-effect"></div>
+                </div>
+                <div class="card-info">
+                    <h3 class="donut-title">Lemon Glaze</h3>
+                    <p class="donut-desc">Zesty lemon icing dripping over cloud-soft dough.</p>
+                    <div class="donut-meta">
+                        <span class="donut-price">$2.90</span>
+                        <span class="donut-rating">
+                            <i class="fas fa-star"></i> 4.7
+                        </span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
 
-        <div class="cookie-card">
-            <img src="images/blue-dount.png" alt="Blueberry Crunch" class="cookie-img">
-            <h3 class="cookie-title">Blueberry Crunch</h3>
-            <p class="cookie-desc">Vibrant blue glaze topped with dark chocolate crisps.</p>
-            <div class="cookie-price">$3.20</div>
+        <!-- Donut Card 2 -->
+        <div class="donut-card featured" data-flavor="premium">
+            <div class="featured-badge">Featured</div>
+            <div class="card-wrapper">
+                <div class="donut-showcase">
+                    <img src="images/blue-dount.png" alt="Blueberry Crunch" class="donut-img">
+                    <div class="shine-effect"></div>
+                </div>
+                <div class="card-info">
+                    <h3 class="donut-title">Blueberry Crunch</h3>
+                    <p class="donut-desc">Vibrant blue glaze topped with dark chocolate chips.</p>
+                    <div class="donut-meta">
+                        <span class="donut-price">$3.20</span>
+                        <span class="donut-rating">
+                            <i class="fas fa-star"></i> 4.9
+                        </span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
 
-        <div class="cookie-card">
-            <img src="images/choclate-dount.png" alt="Chocolate Dream" class="cookie-img">
-            <h3 class="cookie-title">Chocolate Dream</h3>
-            <p class="cookie-desc">Rich Belgian chocolate glaze with roasted hazelnuts.</p>
-            <div class="cookie-price">$3.40</div>
+        <!-- Donut Card 3 -->
+        <div class="donut-card" data-flavor="glazed">
+            <div class="card-wrapper">
+                <div class="donut-showcase">
+                    <img src="images/choclate-dount.png" alt="Chocolate Dream" class="donut-img">
+                    <div class="shine-effect"></div>
+                </div>
+                <div class="card-info">
+                    <h3 class="donut-title">Chocolate Dream</h3>
+                    <p class="donut-desc">Rich Belgian chocolate glaze with roasted hazelnuts.</p>
+                    <div class="donut-meta">
+                        <span class="donut-price">$3.40</span>
+                        <span class="donut-rating">
+                            <i class="fas fa-star"></i> 4.8
+                        </span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
 
-        <div class="cookie-card">
-            <img src="images/pink-dount.png" alt="Strawberry Kiss" class="cookie-img">
-            <h3 class="cookie-title">Strawberry Kiss</h3>
-            <p class="cookie-desc">Sweet strawberry glaze showered with rainbow sprinkles.</p>
-            <div class="cookie-price">$3.10</div>
+        <!-- Donut Card 4 -->
+        <div class="donut-card" data-flavor="sprinkled">
+            <div class="card-wrapper">
+                <div class="donut-showcase">
+                    <img src="images/pink-dount.png" alt="Strawberry Kiss" class="donut-img">
+                    <div class="shine-effect"></div>
+                </div>
+                <div class="card-info">
+                    <h3 class="donut-title">Strawberry Kiss</h3>
+                    <p class="donut-desc">Sweet strawberry glaze showered with rainbow sprinkles.</p>
+                    <div class="donut-meta">
+                        <span class="donut-price">$3.10</span>
+                        <span class="donut-rating">
+                            <i class="fas fa-star"></i> 4.6
+                        </span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
 
-        <div class="cookie-card">
-            <img src="images/sugar-dount.png" alt="Classic Sugar" class="cookie-img">
-            <h3 class="cookie-title">Classic Sugar</h3>
-            <p class="cookie-desc">Lightly fried and rolled in shimmering crystal sugar.</p>
-            <div class="cookie-price">$2.50</div>
+        <!-- Donut Card 5 -->
+        <div class="donut-card" data-flavor="glazed">
+            <div class="card-wrapper">
+                <div class="donut-showcase">
+                    <img src="images/sugar-dount.png" alt="Classic Sugar" class="donut-img">
+                    <div class="shine-effect"></div>
+                </div>
+                <div class="card-info">
+                    <h3 class="donut-title">Classic Sugar</h3>
+                    <p class="donut-desc">Lightly fried and rolled in shimmering crystal sugar.</p>
+                    <div class="donut-meta">
+                        <span class="donut-price">$2.50</span>
+                        <span class="donut-rating">
+                            <i class="fas fa-star"></i> 4.5
+                        </span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
 
-        <div class="cookie-card">
-            <img src="images/purpledonut.png" alt="Ube Fantasy" class="cookie-img">
-            <h3 class="cookie-title">Ube Fantasy</h3>
-            <p class="cookie-desc">Creamy purple yam glaze with coconut flakes.</p>
-            <div class="cookie-price">$3.50</div>
+        <!-- Donut Card 6 -->
+        <div class="donut-card" data-flavor="premium">
+            <div class="card-wrapper">
+                <div class="donut-showcase">
+                    <img src="images/purpledonut.png" alt="Ube Fantasy" class="donut-img">
+                    <div class="shine-effect"></div>
+                </div>
+                <div class="card-info">
+                    <h3 class="donut-title">Ube Fantasy</h3>
+                    <p class="donut-desc">Creamy purple yam glaze with coconut flakes.</p>
+                    <div class="donut-meta">
+                        <span class="donut-price">$3.50</span>
+                        <span class="donut-rating">
+                            <i class="fas fa-star"></i> 5.0
+                        </span>
+                    </div>
+                </div>
+            </div>
             <button class="btn add-to-cart">Add to Cart</button>
         </div>
-
     </div>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <h2>Order Your Dozen Today!</h2>
+        <p>Get a free coffee with every dozen donuts ordered</p>
+        <button class="btn btn-large">Order Now</button>
+    </section>
 </main>
 
-<!-- Footer -->
 <footer class="footer">
     <div class="footer-content">
-        <p class="footer-text">Thank you for visiting Dafah—where warmth and sweetness linger. Join us again soon!</p>
+        <p>Thank you for visiting Dafah—where warmth and sweetness linger.</p>
         <div class="social-icons">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 </footer>
 
-<!-- GSAP for smooth scroll-in animation from right -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-
-<script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.utils.toArray('.cookie-card').forEach((card, i) => {
-        gsap.from(card, {
-            x: 300,
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: card,
-                start: "top 85%",
-                toggleActions: "play none none reverse"
-            },
-            delay: i * 0.15
-        });
-    });
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="donuts.js"></script>
 
 </body>
-</html>
+</html></html>
