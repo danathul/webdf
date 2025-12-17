@@ -324,3 +324,6 @@ document.addEventListener('keypress', (e) => {
         nextStep();
     }
 });
+// After successful signup
+emailMarketing.sendWelcomeEmail(formState.email);
+emailMarketing.subscribe(formState.email);

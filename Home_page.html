@@ -24,6 +24,8 @@
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
             <li><a href="Location.html">Our Location</a></li>
+            <li><a href="games.html"><i class="fas fa-gamepad"></i> Games</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
             <li><a href="login.html" class="nav-login-btn">Login</a></li>
         </ul>
     </nav>
@@ -100,6 +102,17 @@
             <div id="section5" class="footer">
                 <div class="footer-content">
                     <p class="footer-text">Thank you for visiting Dafah—where warmth and sweetness linger. Join us again soon!</p>
+
+                    <!-- Newsletter Signup -->
+                    <div style="margin: 30px 0; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                        <h3 style="color: white; margin-bottom: 15px; font-size: 18px;">📧 Subscribe to Our Newsletter</h3>
+                        <form onsubmit="handleNewsletterSubmit(event)" style="display: flex; gap: 10px;">
+                            <input type="email" id="footer-newsletter-email" placeholder="Enter your email" required style="flex: 1; padding: 10px; border: none; border-radius: 5px; font-size: 14px;">
+                            <button type="submit" style="padding: 10px 20px; background: #D4A373; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: 600;">Subscribe</button>
+                        </form>
+                        <p style="color: rgba(255,255,255,0.8); font-size: 12px; margin-top: 10px;">Get exclusive offers and updates!</p>
+                    </div>
+
                     <div class="social-icons">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -118,8 +131,13 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 <!-- local js -->
 <script src="Home_page.js"></script>
+<script src="emailmarketing.js"></script>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 </div>
 </body>
 </html>
+
+
+
+

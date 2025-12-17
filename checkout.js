@@ -34,12 +34,12 @@ function loadCart() {
     const saved = localStorage.getItem('dafah_cart');
     checkoutState.cart = saved ? JSON.parse(saved) : [];
 
-   // if (checkoutState.cart.length === 0) {
-  //      showToast('Your cart is empty!', 'warning');
-      //  setTimeout(() => {
-         //   window.location.href = 'cart.html';
-      //  }, 2000);
-  //  }
+    if (checkoutState.cart.length === 0) {
+        showToast('Your cart is empty!', 'warning');
+        setTimeout(() => {
+            window.location.href = 'cart.html';
+        }, 2000);
+    }
 }
 
 // Update Order Summary
@@ -311,6 +311,11 @@ function placeOrder() {
 
     // Clear cart
     localStorage.removeItem('dafah_cart');
+
+    // 📱 SEND SMS NOTIFICATION
+    if (checkoutState.shipping.phone) {
+        smsNotifications.sendOrderConfirmationSMS(checkoutState.shipping.phone, order.id);
+    }
 
     // Show success modal
     showSuccessModal(order);

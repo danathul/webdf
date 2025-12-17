@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Play & Win - Dafah Games</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="games.css" />
+</head>
+<body>
+<header class="w-full">
+    <nav class="nav">
+        <h1 class="logo"><i class="fas fa-coffee" aria-hidden="true"></i> Dafah</h1>
+        <ul class="nav-links">
+            <li><a href="Home_page.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+            <li><a href="games.html" class="nav-active"><i class="fas fa-gamepad"></i> Games</a></li>
+            <li><a href="dashboard.html"><i class="fas fa-user"></i> Dashboard</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="games-container">
+    <!-- Header -->
+    <div class="games-header">
+        <h1>🎮 Play & Win Rewards! 🎮</h1>
+        <p>Play our fun games and earn points every day!</p>
+        <div class="points-display">
+            <div class="points-card">
+                <i class="fas fa-star"></i>
+                <span>Your Points: <strong id="user-points">0</strong></span>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-fire"></i>
+                <span>Daily Streak: <strong id="daily-streak">0</strong> days</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Games Grid -->
+    <div class="games-grid">
+        <!-- Game 1: Tap to Collect -->
+        <div class="game-card" id="game-1-card">
+            <div class="game-header">
+                <h2><i class="fas fa-hand-pointer"></i> Tap to Collect</h2>
+                <span class="game-reward">+50 Points</span>
+            </div>
+            <div class="game-preview">
+                <i class="fas fa-cookie"></i>
+            </div>
+            <p class="game-description">Tap the donuts as fast as you can in 30 seconds!</p>
+            <button class="btn-play" onclick="startGame('tap')">
+                <i class="fas fa-play"></i> Play Now
+            </button>
+        </div>
+
+        <!-- Game 2: Memory Cards -->
+        <div class="game-card" id="game-2-card">
+            <div class="game-header">
+                <h2><i class="fas fa-brain"></i> Memory Match</h2>
+                <span class="game-reward">+75 Points</span>
+            </div>
+            <div class="game-preview">
+                <i class="fas fa-th"></i>
+            </div>
+            <p class="game-description">Match pairs of cards and test your memory!</p>
+            <button class="btn-play" onclick="startGame('memory')">
+                <i class="fas fa-play"></i> Play Now
+            </button>
+        </div>
+
+        <!-- Game 3: Spin the Wheel -->
+        <div class="game-card" id="game-3-card">
+            <div class="game-header">
+                <h2><i class="fas fa-dharmachakra"></i> Spin the Wheel</h2>
+                <span class="game-reward">+100 Points</span>
+            </div>
+            <div class="game-preview">
+                <i class="fas fa-circle-notch"></i>
+            </div>
+            <p class="game-description">Spin and win amazing prizes!</p>
+            <button class="btn-play" onclick="startGame('spin')">
+                <i class="fas fa-play"></i> Play Now
+            </button>
+        </div>
+
+        <!-- Game 4: Scratch Card -->
+        <div class="game-card" id="game-4-card">
+            <div class="game-header">
+                <h2><i class="fas fa-ticket-alt"></i> Scratch Card</h2>
+                <span class="game-reward">+60 Points</span>
+            </div>
+            <div class="game-preview">
+                <i class="fas fa-rectangle"></i>
+            </div>
+            <p class="game-description">Scratch to reveal your prize!</p>
+            <button class="btn-play" onclick="startGame('scratch')">
+                <i class="fas fa-play"></i> Play Now
+            </button>
+        </div>
+
+        <!-- Game 5: Flappy Donut -->
+        <div class="game-card" id="game-5-card">
+            <div class="game-header">
+                <h2><i class="fas fa-dove"></i> Flappy Donut</h2>
+                <span class="game-reward">+80 Points</span>
+            </div>
+            <div class="game-preview">
+                <i class="fas fa-arrow-up"></i>
+            </div>
+            <p class="game-description">Navigate the donut through obstacles!</p>
+            <button class="btn-play" onclick="startGame('flappy')">
+                <i class="fas fa-play"></i> Play Now
+            </button>
+        </div>
+
+        <!-- Game 6: Quick Math -->
+        <div class="game-card" id="game-6-card">
+            <div class="game-header">
+                <h2><i class="fas fa-calculator"></i> Quick Math</h2>
+                <span class="game-reward">+70 Points</span>
+            </div>
+            <div class="game-preview">
+                <i class="fas fa-plus"></i>
+            </div>
+            <p class="game-description">Solve math problems quickly!</p>
+            <button class="btn-play" onclick="startGame('math')">
+                <i class="fas fa-play"></i> Play Now
+            </button>
+        </div>
+    </div>
+
+    <!-- Daily Bonus -->
+    <div class="daily-bonus">
+        <h2><i class="fas fa-gift"></i> Daily Bonus</h2>
+        <p>Come back tomorrow to claim your daily bonus!</p>
+        <button class="btn-claim" onclick="claimDailyBonus()">
+            <i class="fas fa-check"></i> Claim Bonus
+        </button>
+    </div>
+</div>
+
+<!-- Game Modals -->
+
+<!-- TAP TO COLLECT GAME -->
+<div id="tap-game-modal" class="game-modal">
+    <div class="game-modal-content">
+        <button class="close-btn" onclick="closeGame()"><i class="fas fa-times"></i></button>
+
+        <div class="game-title">
+            <h2><i class="fas fa-hand-pointer"></i> Tap to Collect</h2>
+            <p>Tap the donuts as fast as you can!</p>
+        </div>
+
+        <div class="game-stats">
+            <div class="stat">
+                <span>Time:</span>
+                <span id="tap-timer">30</span>s
+            </div>
+            <div class="stat">
+                <span>Score:</span>
+                <span id="tap-score">0</span>
+            </div>
+        </div>
+
+        <div class="tap-game-area">
+            <button class="tap-button" id="tap-target" onclick="tapDonut()">
+                <i class="fas fa-cookie"></i>
+            </button>
+        </div>
+
+        <div id="tap-result" class="game-result" style="display: none;">
+            <h3>Game Over!</h3>
+            <p>You collected <strong id="tap-final-score">0</strong> donuts!</p>
+            <p>You earned <strong id="tap-points-earned">0</strong> points!</p>
+            <button class="btn-play-again" onclick="startGame('tap')">Play Again</button>
+            <button class="btn-close" onclick="closeGame()">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- MEMORY GAME -->
+<div id="memory-game-modal" class="game-modal">
+    <div class="game-modal-content">
+        <button class="close-btn" onclick="closeGame()"><i class="fas fa-times"></i></button>
+
+        <div class="game-title">
+            <h2><i class="fas fa-brain"></i> Memory Match</h2>
+            <p>Match all pairs to win!</p>
+        </div>
+
+        <div class="game-stats">
+            <div class="stat">
+                <span>Moves:</span>
+                <span id="memory-moves">0</span>
+            </div>
+            <div class="stat">
+                <span>Matched:</span>
+                <span id="memory-matched">0</span>/8
+            </div>
+        </div>
+
+        <div class="memory-grid" id="memory-grid"></div>
+
+        <div id="memory-result" class="game-result" style="display: none;">
+            <h3>You Won!</h3>
+            <p>Completed in <strong id="memory-final-moves">0</strong> moves!</p>
+            <p>You earned <strong id="memory-points-earned">0</strong> points!</p>
+            <button class="btn-play-again" onclick="startGame('memory')">Play Again</button>
+            <button class="btn-close" onclick="closeGame()">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- SPIN THE WHEEL GAME -->
+<div id="spin-game-modal" class="game-modal">
+    <div class="game-modal-content">
+        <button class="close-btn" onclick="closeGame()"><i class="fas fa-times"></i></button>
+
+        <div class="game-title">
+            <h2><i class="fas fa-dharmachakra"></i> Spin the Wheel</h2>
+            <p>Click to spin and win!</p>
+        </div>
+
+        <div class="wheel-container">
+            <div class="wheel" id="spin-wheel">
+                <div class="wheel-segment" style="--rotation: 0deg;"><span>50</span></div>
+                <div class="wheel-segment" style="--rotation: 60deg;"><span>100</span></div>
+                <div class="wheel-segment" style="--rotation: 120deg;"><span>75</span></div>
+                <div class="wheel-segment" style="--rotation: 180deg;"><span>150</span></div>
+                <div class="wheel-segment" style="--rotation: 240deg;"><span>50</span></div>
+                <div class="wheel-segment" style="--rotation: 300deg;"><span>200</span></div>
+            </div>
+            <div class="wheel-pointer"></div>
+        </div>
+
+        <button class="btn-spin" id="spin-btn" onclick="spinWheel()">
+            <i class="fas fa-play"></i> SPIN
+        </button>
+
+        <div id="spin-result" class="game-result" style="display: none;">
+            <h3>You Won!</h3>
+            <p>You earned <strong id="spin-points-earned">0</strong> points!</p>
+            <button class="btn-play-again" onclick="startGame('spin')">Spin Again</button>
+            <button class="btn-close" onclick="closeGame()">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- SCRATCH CARD GAME -->
+<div id="scratch-game-modal" class="game-modal">
+    <div class="game-modal-content">
+        <button class="close-btn" onclick="closeGame()"><i class="fas fa-times"></i></button>
+
+        <div class="game-title">
+            <h2><i class="fas fa-ticket-alt"></i> Scratch Card</h2>
+            <p>Scratch to reveal your prize!</p>
+        </div>
+
+        <div class="scratch-container">
+            <canvas id="scratch-canvas"></canvas>
+            <div class="scratch-prize" id="scratch-prize">
+                <span id="scratch-amount">0</span> Points
+            </div>
+        </div>
+
+        <p class="scratch-hint">Scratch the card with your mouse/finger</p>
+
+        <div id="scratch-result" class="game-result" style="display: none;">
+            <h3>Congratulations!</h3>
+            <p>You won <strong id="scratch-points-earned">0</strong> points!</p>
+            <button class="btn-play-again" onclick="startGame('scratch')">Play Again</button>
+            <button class="btn-close" onclick="closeGame()">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- FLAPPY DONUT GAME -->
+<div id="flappy-game-modal" class="game-modal">
+    <div class="game-modal-content">
+        <button class="close-btn" onclick="closeGame()"><i class="fas fa-times"></i></button>
+
+        <div class="game-title">
+            <h2><i class="fas fa-dove"></i> Flappy Donut</h2>
+            <p>Click to make the donut jump!</p>
+        </div>
+
+        <div class="game-stats">
+            <div class="stat">
+                <span>Score:</span>
+                <span id="flappy-score">0</span>
+            </div>
+        </div>
+
+        <canvas id="flappy-canvas" width="400" height="500"></canvas>
+
+        <div id="flappy-result" class="game-result" style="display: none;">
+            <h3>Game Over!</h3>
+            <p>Your score: <strong id="flappy-final-score">0</strong></p>
+            <p>You earned <strong id="flappy-points-earned">0</strong> points!</p>
+            <button class="btn-play-again" onclick="startGame('flappy')">Play Again</button>
+            <button class="btn-close" onclick="closeGame()">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- QUICK MATH GAME -->
+<div id="math-game-modal" class="game-modal">
+    <div class="game-modal-content">
+        <button class="close-btn" onclick="closeGame()"><i class="fas fa-times"></i></button>
+
+        <div class="game-title">
+            <h2><i class="fas fa-calculator"></i> Quick Math</h2>
+            <p>Solve as many problems as you can!</p>
+        </div>
+
+        <div class="game-stats">
+            <div class="stat">
+                <span>Correct:</span>
+                <span id="math-correct">0</span>
+            </div>
+            <div class="stat">
+                <span>Time:</span>
+                <span id="math-timer">30</span>s
+            </div>
+        </div>
+
+        <div class="math-problem">
+            <div class="problem-display" id="math-problem">5 + 3 = ?</div>
+            <div class="math-options" id="math-options"></div>
+        </div>
+
+        <div id="math-result" class="game-result" style="display: none;">
+            <h3>Time's Up!</h3>
+            <p>You solved <strong id="math-final-correct">0</strong> problems correctly!</p>
+            <p>You earned <strong id="math-points-earned">0</strong> points!</p>
+            <button class="btn-play-again" onclick="startGame('math')">Play Again</button>
+            <button class="btn-close" onclick="closeGame()">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast"></div>
+
+<!-- Confetti Animation -->
+<div id="confetti-container"></div>
+
+<script src="jquery.js"></script>
+<script src="games.js"></script>
+</body>
+</html>
