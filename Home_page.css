@@ -68,7 +68,7 @@ img{
 
 /* header */
 header{
-    padding: 1rem 0;
+    padding: 0.4rem 0; /* reduced to make header background shorter */
     position: fixed;
     left: 0;
     top: 0;
@@ -306,7 +306,7 @@ header{
     position: absolute;
     width: 500px;
     height: auto;
-    top: 32%;
+    top: 30%;
     left: 58%;
     transform: translate(-50%, -50%);
     filter: drop-shadow(8px 35px 6px rgba(0, 0, 0, 0.15));
@@ -432,7 +432,7 @@ header{
     display: flex;
     justify-content: space-between; /* Pushes Logo to left, Links to right */
     align-items: center;
-    padding: 20px 50px;
+    padding: 10px 40px; /* reduced vertical padding to shrink header height */
 }
 
 .nav-links {

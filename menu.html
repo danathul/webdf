@@ -26,7 +26,6 @@
         <h1 class="logo"><i class="fas fa-coffee" aria-hidden="true"></i> Dafah</h1>
         <ul class="nav-links">
             <li><a href="Home_page.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
             <li><a href="Location.html">Our Location</a></li>
@@ -46,9 +45,10 @@
         <div class="hard">
 
         </div>
-        <div>
-            <small>Thanks for choosing us</small>
-            <small>^^</small>
+        <div class="intro-page">
+            <small class="intro-note">
+                From the first sip to the last crumb, every treat here is crafted with care to make your moments sweeter.
+            </small>
         </div>
         <div>
             <small> DOUNTS </small>
@@ -73,6 +73,13 @@
                     <span class="item-price">$3.20</span>
                 </div>
             </div>
+            <div class="menu-item" data-link="donuts.html">
+                <img src="images/dount-white.png" alt="White Glaze Donut" />
+                <div class="item-info">
+                    <span class="item-name">White Glaze</span>
+                    <span class="item-price">$3.00</span>
+                </div>
+            </div>
         </div>
         <div>
             <small> DOUNTS </small>
@@ -94,6 +101,13 @@
                 <img src="images/purpledonut.png" alt="Purple Donut" />
                 <div class="item-info">
                     <span class="item-name">Purple Dream</span>
+                    <span class="item-price">$3.10</span>
+                </div>
+            </div>
+            <div class="menu-item" data-link="donuts.html">
+                <img src="images/greendonuts.png" alt="Green Donut" />
+                <div class="item-info">
+                    <span class="item-name">Mint Dream</span>
                     <span class="item-price">$3.10</span>
                 </div>
             </div>
@@ -121,6 +135,13 @@
                     <span class="item-price">$5.00</span>
                 </div>
             </div>
+            <div class="menu-item" data-link="Drinks.html">
+                <img src="images/caramel.png" alt="Pumpkin Latte" />
+                <div class="item-info">
+                    <span class="item-name">Pumpkin Latte</span>
+                    <span class="item-price">$5.75</span>
+                </div>
+            </div>
         </div>
         <div>
             <small> DRINKS </small>
@@ -143,6 +164,13 @@
                 <div class="item-info">
                     <span class="item-name">Iced Latte</span>
                     <span class="item-price">$4.75</span>
+                </div>
+            </div>
+            <div class="menu-item" data-link="Drinks.html">
+                <img src="images/frappe.jpeg" alt="Milkshake" />
+                <div class="item-info">
+                    <span class="item-name">Milkshake</span>
+                    <span class="item-price">$5.25</span>
                 </div>
             </div>
         </div>
@@ -169,6 +197,13 @@
                     <span class="item-price">$2.75</span>
                 </div>
             </div>
+            <div class="menu-item" data-link="Cookies.html">
+                <img src="images/creamcookies.png" alt="Cream Cookies" />
+                <div class="item-info">
+                    <span class="item-name">Cream Cookie</span>
+                    <span class="item-price">$3.25</span>
+                </div>
+            </div>
         </div>
         <div>
             <small> COOKIES </small>
@@ -193,12 +228,19 @@
                     <span class="item-price">$3.50</span>
                 </div>
             </div>
+            <div class="menu-item" data-link="Cookies.html">
+                <img src="images/pumkincookies.png" alt="Pumpkin Cookie" />
+                <div class="item-info">
+                    <span class="item-name">Pumpkin Cookie</span>
+                    <span class="item-price">$3.80</span>
+                </div>
+            </div>
         </div>
         <div>
             <img src="images/img-6.png" alt="" />
         </div>
         <div class="hard"></div>
-        <div class="hard">Thank You </div>
+        <div class="hard"></div>
     </div>
     <div class="menu-buttons">
         <button class="menu-btn" id="donutsBtn">Donuts</button>
@@ -302,8 +344,8 @@
         // Set initial active button (optional – here we pick Donuts/page 4)
         setActiveButton("#donutsBtn");
 
-        // Handle clicks on menu items to navigate to respective pages
-        $(".menu-item").on("click", function() {
+        // Handle clicks on any menu item (works even for pages managed by turn.js)
+        $(document).on("click", ".menu-item", function(e) {
             var link = $(this).data("link");
             if (link) {
                 window.location.href = link;
