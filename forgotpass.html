@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+
+    <!-- LINK CSS FILE -->
+    <link rel="stylesheet" href="forgotpass.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="icon">🔑</div>
+        <h1>Reset Password</h1>
+        <p>Enter your email and we'll send you a link to reset your password.</p>
+    </div>
+
+    <form id="resetForm">
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+            >
+        </div>
+
+        <button type="submit" id="submitBtn">Send Reset Link</button>
+
+        <div class="loading" id="loading">
+            <span class="spinner"></span>Sending...
+        </div>
+
+        <div class="message" id="message"></div>
+    </form>
+
+    <div class="links">
+        <p><a href="login.html">← Back to Sign In</a></p>
+        <p>New here? <a href="signup.html">Create an account</a></p>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('resetForm');
+    const emailInput = document.getElementById('email');
+    const submitBtn = document.getElementById('submitBtn');
+    const loading = document.getElementById('loading');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const email = emailInput.value.trim();
+
+        if (!email) {
+            showMessage('Please enter your email address.', 'error');
+            return;
+        }
+
+        if (!isValidEmail(email)) {
+            showMessage('Please enter a valid email address.', 'error');
+            return;
+        }
+
+        submitBtn.disabled = true;
+        loading.style.display = 'block';
+        message.style.display = 'none';
+
+        setTimeout(() => {
+            loading.style.display = 'none';
+            showMessage(`✓ Reset link sent to ${email}. Check your inbox!`, 'success');
+            form.reset();
+            submitBtn.disabled = false;
+        }, 1500);
+    });
+
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function showMessage(text, type) {
+        message.textContent = text;
+        message.className = `message ${type}`;
+        message.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
